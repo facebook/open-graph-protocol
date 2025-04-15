@@ -374,24 +374,6 @@ The following types are used when defining attributes in Open Graph protocol.
 </table>
 
 ---
-## <a id='discuss' href="#discuss">Discussion and support</a>
-
-You can discuss the Open Graph Protocol in
-[the Facebook group](
-https://www.facebook.com/groups/opengraph/) or on 
-[the developer mailing list](
-http://groups.google.com/group/open-graph-protocol).
-It is currently being consumed by Facebook
-([see their documentation](
-http://developers.facebook.com/docs/opengraph/)), Google ([see their documentation](
-https://developers.google.com/+/web/snippet/)), and
-[mixi](
-http://developer.mixi.co.jp/en/connect/mixi_plugin/mixi_check/spec_mixi_check/).
-It is being published by IMDb, Microsoft, NHL, Posterous, Rotten Tomatoes,
-TIME, Yelp, and many many others.
-
-
----
 ## <a id='implementations' href="#implementations">Implementations</a>
 The open source community has developed a number of parsers and publishing
 tools. Let the Facebook group know if you've built something awesome too!
