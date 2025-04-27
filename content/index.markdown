@@ -383,7 +383,11 @@ tools. Let the Facebook group know if you've built something awesome too!
 * [PHP Validator and Markup Generator](https://github.com/niallkennedy/open-graph-protocol-tools) - OGP 2011 input validator and markup generator in PHP5 objects.
 * [PHP Consumer](http://github.com/scottmac/opengraph) - A small library for accessing of Open Graph Protocol data in PHP.
 * [OpenGraphNode in PHP](http://buzzword.org.uk/2010/opengraph/#php) - A simple parser for PHP.
-* [PyOpenGraph](http://pypi.python.org/pypi/PyOpenGraph) - A library written in Python for parsing Open Graph protocol information from web sites.
+* Python modules for fetching and parsing OpenGraph Data
+    * [PyOpenGraph](http://pypi.python.org/pypi/PyOpenGraph) - A library written in Python for parsing Open Graph protocol information from web sites. (ATTENTION: This repository is not maintained anymore. Source: Github page)
+    * [OpenGraph for Python](https://github.com/erikriver/opengraph) - A python module to parse the Open Graph Protocol
+    * [WebPreview for Python](https://github.com/ludbek/webpreview) -  Extracts OpenGraph, TwitterCard and Schema properties from a webpage.
+    * [python-opengraph](https://github.com/HenrikOssipoff/python-opengraph) - Python module to parse Open Graph metadata on web pages
 * [OpenGraph Ruby](http://github.com/intridea/opengraph) - Ruby Gem which parses web pages and extracts Open Graph protocol markup.
 * [OpenGraph for Java](http://github.com/callumj/opengraph-java) - Small Java class used to represent the Open Graph protocol.
 * [RDF::RDFa::Parser](http://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm) - Perl RDFa parser which understands the Open Graph protocol.
