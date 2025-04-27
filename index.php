@@ -60,24 +60,5 @@ $html = Markdown::defaultTransform($markdown);
       <p>The Open Graph protocol was originally created at Facebook and is inspired by <a href="http://en.wikipedia.org/wiki/Dublin_Core">Dublin Core</a>, <a href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html">link-rel canonical</a>, <a href="http://microformats.org/">Microformats</a>, and <a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a>. The specification described on this page is available under the <a href="http://openwebfoundation.org/legal/the-0-9-agreements---necessary-claims">Open Web Foundation Agreement, Version 0.9</a>. This website is <a href="https://github.com/facebook/open-graph-protocol">Open Source</a>. Last updated <?php $updated_time = filemtime( $base_dir . '/content/index.markdown' ); ?><time pubdate="<?php echo date('c', $updated_time); ?>"><?php date_default_timezone_set('UTC'); echo date( 'F dS, Y', $updated_time ); ?></time></p>
     </div>
     </div>
-<script type="text/javascript">
-var _sf_async_config={uid:1415,domain:"ogp.me"};
-(function(){
-  function loadChartbeat() {
-    window._sf_endpt=(new Date()).getTime();
-    var e = document.createElement('script');
-    e.setAttribute('language', 'javascript');
-    e.setAttribute('type', 'text/javascript');
-    e.setAttribute('src',
-       (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
-       "static.chartbeat.com/js/chartbeat.js");
-    document.body.appendChild(e);
-  }
-  var oldonload = window.onload;
-  window.onload = (typeof window.onload != 'function') ?
-     loadChartbeat : function() { oldonload(); loadChartbeat(); };
-})();
-
-</script>
   </body>
 </html>
