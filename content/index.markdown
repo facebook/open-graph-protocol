@@ -303,6 +303,19 @@ yet are broadly used and agreed upon.
 No additional properties other than the basic ones.
 Any non-marked up webpage should be treated as `og:type` website.
 
+<a name="type_3dobject" href="#type_3dobject">`3dobject`</a> - Namespace URI: [`http://ogp.me/ns/3dobject#`](http://ogp.me/ns/3dobject)
+
+The following has been widely adopted by the online 3D community.  Full [details here](http://exocortex.com/blog/opengraph_3dmodel_extension).
+
+* `3dobject:name` - [string](#string) - the name of this 3D object without author name.
+* `3dobject:published_time` - [datetime](#datetime) - When the 3D object was first published.
+* `3dobject:modified_time` - [datetime](#datetime) - When the 3D object was last changed.
+* `3dobject:author` - [profile](#type_profile) - The creator of this 3D object.
+* `3dobject:tag` - [string](#string) [array](#array) - Tag words associated with this 3D object.
+* `3dobject:view` - [url](#url) - URL of the barebones embeddable viewer for this 3D object.
+* `3dobject:license` - [string](#string) - The short form of the 3D object license.
+* `3dobject:format` - [string](#string) [array](#array) - The extensions of the download formats available.
+* `3dobject:format:[extension]` - [url](#url) - URL of the downlodable format spcified by [extension].
 
 ---
 ## <a id="data_types" href="#data_types">Types</a>
