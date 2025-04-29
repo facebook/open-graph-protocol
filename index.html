@@ -280,6 +280,18 @@ The <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">I
 <li><code>book:tag</code> - <a href="#string">string</a> <a href="#array">array</a> -
 Tag words associated with this book.</li>
 </ul>
+
+<p><a name="type_payment" href="#type_payment"><code>payment</code></a> - Namespace URI: <a href="https://ogp.me/ns/payment"><code>https://ogp.me/ns/payment#</code></a></p>
+<ul>
+<li><code>payment:description</code> - <a href="#string">string</a> - Description about the payment link.</li>
+<li><code>payment:currency</code> - <a href="#string">string</a> - The currency code <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a> of the payment.</li>
+<li><code>payment:amount</code> - <a href="#float">float</a> - An amount requested on the payment link in decimal format.</li>
+<li><code>payment:expires_at</code> - <a href="#datetime">datetime</a> - The date and time including minutes and seconds on which the payment link expires.</li>
+<li><code>payment:status</code> - <a href="#enum">enum</a>(PENDING, PAID, FAILED, EXPIRED) - Status of the payment.</li>
+<li><code>payment:id</code> - <a href="#string">string</a> - The unique identifier associated with the payment link for a given payment gateway or service provider.</li>
+<li><code>payment:success_url</code> - <a href="#url">URL</a> - A valid URL that gets redirected when payment is success.</li>
+</ul>
+
 <p><a name="type_profile" href="#type_profile"><code>profile</code></a> - Namespace URI: <a href="https://ogp.me/ns/profile"><code>https://ogp.me/ns/profile#</code></a></p>
 <ul>
 <li><code>profile:first_name</code> - <a href="#string">string</a> - A name normally given to an individual by a parent or self-chosen.</li>
