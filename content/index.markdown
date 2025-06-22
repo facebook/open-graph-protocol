@@ -293,7 +293,17 @@ yet are broadly used and agreed upon.
 * `book:tag` - [string](#string) [array](#array) -
   Tag words associated with this book.
 
-<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`https://ogp.me/ns/profile#`](https://ogp.me/ns/profile)
+<a name="type_payment" href="#type_payment">`payment.link`</a> - Namespace URI: [`https://ogp.me/ns/payment#`](http://ogp.me/ns/payments) 🚧 **Beta only**
+
+* `payment:description` - [string](#string) - Description about the payment link. 
+* `payment:currency` - [string](#string) - The currency code [`ISO 4217`](https://en.wikipedia.org/wiki/ISO_4217) of the payment.
+* `payment:amount` - [float](#float) - An amount requested on the payment link in decimal format.
+* `payment:expires_at` - [datetime](#datetime) - The date and time including minutes and seconds on which the payment link expires.
+* `payment:status` - [enum](#enum)(PENDING, PAID, FAILED, EXPIRED) - Status of the payment.
+* `payment:id` - [string](#string) - The unique identifier associated with the payment link for a given payment gateway or service provider.
+* `payment:success_url` - [url](#url) - A valid URL that gets redirected when payment is success.  
+
+<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`http://ogp.me/ns/profile#`](http://ogp.me/ns/profile)
 
 * `profile:first_name` - [string](#string) - A name normally given to an individual by a parent or self-chosen.
 * `profile:last_name` - [string](#string) - A name inherited from a family or marriage and by which the individual is commonly known.
