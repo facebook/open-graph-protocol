@@ -65,6 +65,11 @@ og:image a rdf:Property ;
   rdfs:comment "The height of an image."@en-US ;
   rdfs:isDefinedBy og: ;
   rdfs:range ogc:integer_str .
+<http://ogp.me/ns#image:alt> a rdf:Property ;
+  rdfs:label "image alternative text"@en-US ;
+  rdfs:comment "A description of what is in the image."@en-US ;
+  rdfs:isDefinedBy og: ;
+  rdfs:range ogc:string .
 og:video a rdf:Property ;
   rdfs:label "video"@en-US ;
   rdfs:comment "A relevant video URL for your object."@en-US ;

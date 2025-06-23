@@ -99,6 +99,7 @@ The `og:image` property has some optional structured properties:
     http://en.wikipedia.org/wiki/Internet_media_type) for this image.
  * `og:image:width` - The number of pixels wide.
  * `og:image:height` - The number of pixels high.
+ * `og:image:alt` - A description of what is in the image (not a caption). If the page specifies an og:image it should specify `og:image:alt`.
 
 A full image example:
 
@@ -107,6 +108,7 @@ A full image example:
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="A shiny red apple with a bite taken out" />
 
 The `og:video` tag has the identical tags as `og:image`. Here is an example:
 
