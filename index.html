@@ -26,24 +26,30 @@
       <img alt="Open Graph protocol logo" src="https://ogp.me/logo.png" width="300" height="300">
     </div>
     <div id="content">
-<h2 id="aidintrohrefintrointroductiona"><a id="intro" href="#intro">Introduction</a></h2>
+      <h2><a id="intro" href="#intro">Introduction</a></h2>
+
 <p>The <a href="https://ogp.me/">Open Graph protocol</a> enables any web page to become a
 rich object in a social graph. For instance, this is used on Facebook to allow
 any web page to have the same functionality as any other object on Facebook.</p>
+
 <p>While many different technologies and schemas exist and could be combined
 together, there isn't a single technology which provides enough information to
 richly represent any web page within the social graph. The Open Graph protocol
 builds on these existing technologies and gives developers one thing to
 implement. Developer simplicity is a key goal of the Open Graph protocol which
-has informed many of <a href="https://www.scribd.com/doc/30715288/The-Open-Graph-Protocol-Design-Decisions">the technical design decisions</a>.
-</p>
+has informed many of
+<a href="https://www.scribd.com/doc/30715288/The-Open-Graph-Protocol-Design-Decisions">the technical design decisions</a>.</p>
+
 <hr />
-<h2 id="aidmetadatahrefmetadatabasicmetadataa"><a id="metadata" href="#metadata">Basic Metadata</a></h2>
+
+<h2><a id="metadata" href="#metadata">Basic Metadata</a></h2>
+
 <p>To turn your web pages into graph objects, you need to add basic metadata to
 your page. We've based the initial version of the protocol on
 <a href="https://en.wikipedia.org/wiki/RDFa">RDFa</a> which means that you'll place
 additional <code>&lt;meta&gt;</code> tags in the <code>&lt;head&gt;</code> of your web page. The four required
 properties for every page are:</p>
+
 <ul>
 <li><code>og:title</code> - The title of your object as it should appear within the graph,
 e.g., "The Rock".</li>
@@ -54,8 +60,10 @@ graph.</li>
 <li><code>og:url</code> - The canonical URL of your object that will be used as its
 permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".</li>
 </ul>
+
 <p>As an example, the following is the Open Graph protocol markup for <a href="https://www.imdb.com/title/tt0117500/">The Rock on
 IMDB</a>:</p>
+
 <pre><code>&lt;html prefix="og: https://ogp.me/ns#"&gt;
 &lt;head&gt;
 &lt;title&gt;The Rock (1996)&lt;/title&gt;
@@ -68,15 +76,18 @@ IMDB</a>:</p>
 ...
 &lt;/html&gt;
 </code></pre>
-<h3 id="aidoptionalhrefoptionaloptionalmetadataa"><a id="optional" href="#optional">Optional Metadata</a></h3>
+
+<h3><a id="optional" href="#optional">Optional Metadata</a></h3>
+
 <p>The following properties are optional for any object and are generally
 recommended:</p>
+
 <ul>
 <li><code>og:audio</code> - A URL to an audio file to accompany this object.</li>
 <li><code>og:description</code> - A one to two sentence description of your object.</li>
 <li><code>og:determiner</code> - The word that appears before this object's title
 in a sentence. An <a href="#enum">enum</a> of (a, an, the, "", auto). If <code>auto</code> is 
-chosen, the consumer of your data should chose between "a" or "an".
+chosen, the consumer of your data should choose between "a" or "an".
 Default is "" (blank).</li>
 <li><code>og:locale</code> - The locale these tags are marked up in.
 Of the format <code>language_TERRITORY</code>. Default is <code>en_US</code>.</li>
@@ -86,7 +97,9 @@ available in.</li>
 should be displayed for the overall site. e.g., "IMDb".</li>
 <li><code>og:video</code> - A URL to a video file that complements this object.</li>
 </ul>
+
 <p>For example (line-break solely for display purposes):</p>
+
 <pre><code>&lt;meta property="og:audio" content="https://example.com/bond/theme.mp3" /&gt;
 &lt;meta property="og:description" 
   content="Sean Connery found fame and fortune as the
@@ -98,14 +111,20 @@ should be displayed for the overall site. e.g., "IMDb".</li>
 &lt;meta property="og:site_name" content="IMDb" /&gt;
 &lt;meta property="og:video" content="https://example.com/bond/trailer.swf" /&gt;
 </code></pre>
+
 <p>The RDF schema (in <a href="https://en.wikipedia.org/wiki/Turtle_(syntax)">Turtle</a>) 
 can be found at <a href="https://ogp.me/ns/ogp.me.ttl">ogp.me/ns</a>.</p>
+
 <hr />
-<h2 id="aidstructuredhrefstructuredstructuredpropertiesa"><a id="structured" href="#structured">Structured Properties</a></h2>
+
+<h2><a id="structured" href="#structured">Structured Properties</a></h2>
+
 <p>Some properties can have extra metadata attached to them.
 These are specified in the same way as other metadata with <code>property</code> and
 <code>content</code>, but the <code>property</code> will have extra <code>:</code>.</p>
+
 <p>The <code>og:image</code> property has some optional structured properties:</p>
+
 <ul>
 <li><code>og:image:url</code> - Identical to <code>og:image</code>.</li>
 <li><code>og:image:secure_url</code> - An alternate url to use if the webpage requires
@@ -115,39 +134,52 @@ HTTPS.</li>
 <li><code>og:image:height</code> - The number of pixels high.</li>
 <li><code>og:image:alt</code> - A description of what is in the image (not a caption). If the page specifies an og:image it should specify <code>og:image:alt</code>.</li>
 </ul>
+
 <p>A full image example:</p>
-<pre><code>&lt;meta property="og:image" content="https://example.com/ogp.jpg" /&gt;
+
+<pre><code>&lt;meta property="og:image" content="http://example.com/ogp.jpg" /&gt;
 &lt;meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" /&gt;
 &lt;meta property="og:image:type" content="image/jpeg" /&gt;
 &lt;meta property="og:image:width" content="400" /&gt;
 &lt;meta property="og:image:height" content="300" /&gt;
 &lt;meta property="og:image:alt" content="A shiny red apple with a bite taken out" /&gt;
 </code></pre>
+
 <p>The <code>og:video</code> tag has the identical tags as <code>og:image</code>. Here is an example:</p>
-<pre><code>&lt;meta property="og:video" content="https://example.com/movie.swf" /&gt;
+
+<pre><code>&lt;meta property="og:video" content="http://example.com/movie.swf" /&gt;
 &lt;meta property="og:video:secure_url" content="https://secure.example.com/movie.swf" /&gt;
 &lt;meta property="og:video:type" content="application/x-shockwave-flash" /&gt;
 &lt;meta property="og:video:width" content="400" /&gt;
 &lt;meta property="og:video:height" content="300" /&gt;
 </code></pre>
+
 <p>The <code>og:audio</code> tag only has the first 3 properties available
 (since size doesn't make sense for sound):</p>
-<pre><code>&lt;meta property="og:audio" content="https://example.com/sound.mp3" /&gt;
+
+<pre><code>&lt;meta property="og:audio" content="http://example.com/sound.mp3" /&gt;
 &lt;meta property="og:audio:secure_url" content="https://secure.example.com/sound.mp3" /&gt;
 &lt;meta property="og:audio:type" content="audio/mpeg" /&gt;
 </code></pre>
+
 <hr />
-<h2 id="aidarrayhrefarrayarraysa"><a id="array" href="#array">Arrays</a></h2>
+
+<h2><a id="array" href="#array">Arrays</a></h2>
+
 <p>If a tag can have multiple values, just put multiple versions of the same
 <code>&lt;meta&gt;</code> tag on your page. The first tag (from top to bottom) is given
 preference during conflicts.</p>
+
 <pre><code>&lt;meta property="og:image" content="https://example.com/rock.jpg" /&gt;
 &lt;meta property="og:image" content="https://example.com/rock2.jpg" /&gt;
 </code></pre>
+
 <p>Put structured properties after you declare their root tag. Whenever
 another root element is parsed, that structured property
 is considered to be done and another one is started.</p>
+
 <p>For example:</p>
+
 <pre><code>&lt;meta property="og:image" content="https://example.com/rock.jpg" /&gt;
 &lt;meta property="og:image:width" content="300" /&gt;
 &lt;meta property="og:image:height" content="300" /&gt;
@@ -155,31 +187,44 @@ is considered to be done and another one is started.</p>
 &lt;meta property="og:image" content="https://example.com/rock3.jpg" /&gt;
 &lt;meta property="og:image:height" content="1000" /&gt;
 </code></pre>
+
 <p>means there are 3 images on this page, the first image is <code>300x300</code>, the middle
 one has unspecified dimensions, and the last one is <code>1000</code>px tall.</p>
+
 <hr />
-<h2 id="aidtypeshreftypesobjecttypesa"><a id="types" href="#types">Object Types</a></h2>
+
+<h2><a id="types" href="#types">Object Types</a></h2>
+
 <p>In order for your object to be represented within the graph, you need to
 specify its type. This is done using the <code>og:type</code> property:</p>
+
 <pre><code>&lt;meta property="og:type" content="website" /&gt;
 </code></pre>
+
 <p>When the community agrees on the schema for a type, it is added to the list
 of global types. All other objects in the type system are
 <a href="https://en.wikipedia.org/wiki/CURIE">CURIEs</a> of the form</p>
+
 <pre><code>&lt;head prefix="my_namespace: https://example.com/ns#"&gt;
 &lt;meta property="og:type" content="my_namespace:my_type" /&gt;
 </code></pre>
+
 <p>The global types are grouped into verticals. Each vertical has its
 own namespace. The <code>og:type</code> values for a namespace are always prefixed with
 the namespace and then a period.
 This is to reduce confusion with user-defined namespaced types which always
 have colons in them.</p>
-<h3 id="aidtype_musichreftype_musicmusica"><a id="type_music" href="#type_music">Music</a></h3>
+
+<h3><a id="type_music" href="#type_music">Music</a></h3>
+
 <ul>
 <li>Namespace URI: <a href="https://ogp.me/ns/music"><code>https://ogp.me/ns/music#</code></a></li>
 </ul>
+
 <p><code>og:type</code> values:</p>
+
 <p><a name="type_music.song" href="#type_music.song"><code>music.song</code></a></p>
+
 <ul>
 <li><code>music:duration</code> - <a href="#integer">integer</a> &gt;=1 - The song's length in seconds.</li>
 <li><code>music:album</code> - <a href="#type_music.album">music.album</a> <a href="#array">array</a> -
@@ -191,7 +236,9 @@ Which track this song is.</li>
 <li><code>music:musician</code> - <a href="#type_profile">profile</a> <a href="#array">array</a> -
 The musician that made this song.</li>
 </ul>
+
 <p><a name="type_music.album" href="#type_music.album"><code>music.album</code></a></p>
+
 <ul>
 <li><code>music:song</code> - <a href="#type_music.song">music.song</a> - The song on this album.</li>
 <li><code>music:song:disc</code> - <a href="#integer">integer</a> &gt;=1 -
@@ -203,23 +250,32 @@ The musician that made this song.</li>
 <li><code>music:release_date</code> - <a href="#datetime">datetime</a> - 
 The date the album was released.</li>
 </ul>
+
 <p><a name="type_music.playlist" href="#type_music.playlist"><code>music.playlist</code></a></p>
+
 <ul>
 <li><code>music:song</code> - Identical to the ones on <a href="#type_music.album">music.album</a></li>
 <li><code>music:song:disc</code></li>
 <li><code>music:song:track</code></li>
 <li><code>music:creator</code> - <a href="#type_profile">profile</a> - The creator of this playlist.</li>
 </ul>
+
 <p><a name="type_music.radio_station" href="#type_music.radio_station"><code>music.radio_station</code></a></p>
+
 <ul>
 <li><code>music:creator</code> - <a href="#type_profile">profile</a> - The creator of this station.</li>
 </ul>
-<h3 id="aidtype_videohreftype_videovideoa"><a id="type_video" href="#type_video">Video</a></h3>
+
+<h3><a id="type_video" href="#type_video">Video</a></h3>
+
 <ul>
 <li>Namespace URI: <a href="https://ogp.me/ns/video"><code>https://ogp.me/ns/video#</code></a></li>
 </ul>
+
 <p><code>og:type</code> values:</p>
+
 <p><a name="type_video.movie" href="#type_video.movie"><code>video.movie</code></a></p>
+
 <ul>
 <li><code>video:actor</code> - <a href="#type_profile">profile</a> <a href="#array">array</a> -
 Actors in the movie.</li>
@@ -235,7 +291,9 @@ The date the movie was released.</li>
 <li><code>video:tag</code> - <a href="#string">string</a> <a href="#array">array</a> -
 Tag words associated with this movie.</li>
 </ul>
+
 <p><a name="type_video.episode" href="#type_video.episode"><code>video.episode</code></a></p>
+
 <ul>
 <li><code>video:actor</code> - Identical to <a href="#type_video.movie">video.movie</a></li>
 <li><code>video:actor:role</code></li>
@@ -247,17 +305,26 @@ Tag words associated with this movie.</li>
 <li><code>video:series</code> - <a href="#type_video.tv_show">video.tv_show</a> -
 Which series this episode belongs to.</li>
 </ul>
+
 <p><a name="type_video.tv_show" href="#type_video.tv_show"><code>video.tv_show</code></a></p>
+
 <p>A multi-episode TV show.
 The metadata is identical to <a href="#type_video.movie">video.movie</a>.</p>
+
 <p><a name="type_video.other" href="#type_video.other"><code>video.other</code></a></p>
+
 <p>A video that doesn't belong in any other category.
 The metadata is identical to <a href="#type_video.movie">video.movie</a>.</p>
-<h3 id="aidno_verticalhrefno_verticalnoverticala"><a id="no_vertical" href="#no_vertical">No Vertical</a></h3>
+
+<h3><a id="no_vertical" href="#no_vertical">No Vertical</a></h3>
+
 <p>These are globally defined objects that just don't fit into a vertical but
 yet are broadly used and agreed upon.</p>
+
 <p><code>og:type</code> values:</p>
+
 <p><a name="type_article" href="#type_article"><code>article</code></a> - Namespace URI: <a href="https://ogp.me/ns/article"><code>https://ogp.me/ns/article#</code></a></p>
+
 <ul>
 <li><code>article:published_time</code> - <a href="#datetime">datetime</a> - 
 When the article was first published.</li>
@@ -271,7 +338,9 @@ Writers of the article.</li>
 <li><code>article:tag</code> - <a href="#string">string</a> <a href="#array">array</a> -
 Tag words associated with this article.</li>
 </ul>
+
 <p><a name="type_book" href="#type_book"><code>book</code></a> - Namespace URI: <a href="https://ogp.me/ns/book"><code>https://ogp.me/ns/book#</code></a></p>
+
 <ul>
 <li><code>book:author</code> - <a href="#type_profile">profile</a> <a href="#array">array</a> - Who wrote this book.</li>
 <li><code>book:isbn</code> - <a href="#string">string</a> -
@@ -280,19 +349,27 @@ The <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">I
 <li><code>book:tag</code> - <a href="#string">string</a> <a href="#array">array</a> -
 Tag words associated with this book.</li>
 </ul>
+
 <p><a name="type_profile" href="#type_profile"><code>profile</code></a> - Namespace URI: <a href="https://ogp.me/ns/profile"><code>https://ogp.me/ns/profile#</code></a></p>
+
 <ul>
 <li><code>profile:first_name</code> - <a href="#string">string</a> - A name normally given to an individual by a parent or self-chosen.</li>
 <li><code>profile:last_name</code> - <a href="#string">string</a> - A name inherited from a family or marriage and by which the individual is commonly known.</li>
 <li><code>profile:username</code> - <a href="#string">string</a> - A short unique string to identify them.</li>
 <li><code>profile:gender</code> - <a href="#enum">enum</a>(male, female) - Their gender.</li>
 </ul>
+
 <p><a name="type_website" href="#type_website"><code>website</code></a> - Namespace URI: <a href="https://ogp.me/ns/website"><code>https://ogp.me/ns/website#</code></a></p>
+
 <p>No additional properties other than the basic ones.
 Any non-marked up webpage should be treated as <code>og:type</code> website.</p>
+
 <hr />
-<h2 id="aiddata_typeshrefdata_typestypesa"><a id="data_types" href="#data_types">Types</a></h2>
+
+<h2><a id="data_types" href="#data_types">Types</a></h2>
+
 <p>The following types are used when defining attributes in Open Graph protocol.</p>
+
 <table>
 <tr>
   <th width=150><b>Type</b></th>
@@ -351,42 +428,36 @@ Any non-marked up webpage should be treated as <code>og:type</code> website.</p>
 <tr>
   <td><a name="url" href="#url">URL</td>
   <td>A sequence of Unicode characters that identify an Internet resource.
-  <td>All valid URLs that utilize the https:// or https:// protocols</td>
+  <td>All valid URLs that utilize the http:// or https:// protocols</td>
 </tr>
 
 </table>
+
 <hr />
-<h2 id="aidimplementationshrefimplementationsimplementationsa"><a id='implementations' href="#implementations">Implementations</a></h2>
+
+<h2><a id='implementations' href="#implementations">Implementations</a></h2>
+
 <p>The open source community has developed a number of parsers and publishing
 tools. Let the Facebook group know if you've built something awesome too!</p>
+
 <ul>
-<li><a href="https://developers.facebook.com/tools/debug/">Facebook Object Debugger</a> -
-Facebook's official parser and debugger</li>
+<li><a href="https://developers.facebook.com/tools/debug/">Facebook Object Debugger</a> - Facebook's official parser and debugger.</li>
 <li><a href="https://www.google.com/webmasters/tools/richsnippets">Google Rich Snippets Testing Tool</a> - Open Graph protocol support in specific verticals and Search Engines.</li>
-<li><a href="https://github.com/niallkennedy/open-graph-protocol-tools">PHP Validator and Markup Generator</a> -  OGP 2011 input validator and markup generator in PHP5 objects</li>
-<li><a href="https://github.com/scottmac/opengraph">PHP Consumer</a> -
-a small library for accessing of Open Graph Protocol data in PHP</li>
-<li><a href="https://buzzword.org.uk/2010/opengraph/#php">OpenGraphNode in PHP</a> -
-a simple parser for PHP</li>
-<li><a href="https://pypi.python.org/pypi/PyOpenGraph">PyOpenGraph</a> -
-a library written in Python for parsing Open Graph protocol
-information from web sites</li>
-<li><a href="https://github.com/intridea/opengraph">OpenGraph Ruby</a> -
-Ruby Gem which parses web pages and extracts Open Graph protocol markup</li>
-<li><a href="https://github.com/callumj/opengraph-java">OpenGraph for Java</a> -
-small Java class used to represent the Open Graph protocol</li>
-<li><a href="https://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm">RDF::RDFa::Parser</a> -
-Perl RDFa parser which understands the Open Graph protocol</li>
-<li><a href="https://wordpress.org/plugins/facebook/">WordPress plugin</a> -
-Facebook's official WordPress plugin, which adds Open Graph metadata to WordPress powered sites. </li>
-<li><a href="https://wordpress.org/plugins/wp-facebook-open-graph-protocol/">Alternate WordPress OGP plugin</a> -
-A simple lightweight WordPress plugin which adds Open Graph metadata to WordPress powered sites. </li>
+<li><a href="https://github.com/niallkennedy/open-graph-protocol-tools">PHP Validator and Markup Generator</a> - OGP 2011 input validator and markup generator in PHP5 objects.</li>
+<li><a href="https://github.com/scottmac/opengraph">PHP Consumer</a> - A small library for accessing of Open Graph Protocol data in PHP.</li>
+<li><a href="https://buzzword.org.uk/2010/opengraph/#php">OpenGraphNode in PHP</a> - A simple parser for PHP.</li>
+<li><a href="https://pypi.python.org/pypi/PyOpenGraph">PyOpenGraph</a> - A library written in Python for parsing Open Graph protocol information from web sites.</li>
+<li><a href="https://github.com/intridea/opengraph">OpenGraph Ruby</a> - Ruby Gem which parses web pages and extracts Open Graph protocol markup.</li>
+<li><a href="https://github.com/callumj/opengraph-java">OpenGraph for Java</a> - Small Java class used to represent the Open Graph protocol.</li>
+<li><a href="https://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm">RDF::RDFa::Parser</a> - Perl RDFa parser which understands the Open Graph protocol.</li>
 </ul>
+
+<hr />
     </div>
     <div id="footer">
       <p>The Open Graph protocol was originally created at Facebook and is inspired by <a href="https://en.wikipedia.org/wiki/Dublin_Core">Dublin Core</a>, <a href="https://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html">link-rel canonical</a>, <a href="https://microformats.org/">Microformats</a>, and <a href="https://en.wikipedia.org/wiki/RDFa">RDFa</a>. The specification described on this page is available under the <a href="https://openwebfoundation.org/legal/the-0-9-agreements---necessary-claims">Open Web Foundation Agreement, Version 0.9</a>. This website is <a href="https://github.com/facebook/open-graph-protocol">Open Source</a>. </p>
     </div>
     </div>
-</script>
+
   </body>
 </html>
