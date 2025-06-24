@@ -1,6 +1,6 @@
 ## <a id="intro" href="#intro">Introduction</a>
 
-The [Open Graph protocol](http://ogp.me/) enables any web page to become a
+The [Open Graph protocol](https://ogp.me/) enables any web page to become a
 rich object in a social graph. For instance, this is used on Facebook to allow
 any web page to have the same functionality as any other object on Facebook.
 
@@ -11,7 +11,7 @@ builds on these existing technologies and gives developers one thing to
 implement. Developer simplicity is a key goal of the Open Graph protocol which
 has informed many of
 [the technical design decisions](
-http://www.scribd.com/doc/30715288/The-Open-Graph-Protocol-Design-Decisions).
+https://www.scribd.com/doc/30715288/The-Open-Graph-Protocol-Design-Decisions).
 
 
 ---
@@ -19,7 +19,7 @@ http://www.scribd.com/doc/30715288/The-Open-Graph-Protocol-Design-Decisions).
 
 To turn your web pages into graph objects, you need to add basic metadata to
 your page. We've based the initial version of the protocol on
-[RDFa](http://en.wikipedia.org/wiki/RDFa) which means that you'll place
+[RDFa](https://en.wikipedia.org/wiki/RDFa) which means that you'll place
 additional `<meta>` tags in the `<head>` of your web page. The four required
 properties for every page are:
 
@@ -30,18 +30,18 @@ properties for every page are:
  * `og:image` - An image URL which should represent your object within the
    graph.
  * `og:url` - The canonical URL of your object that will be used as its
-   permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/".
+   permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".
 
 As an example, the following is the Open Graph protocol markup for [The Rock on
-IMDB](http://www.imdb.com/title/tt0117500/):
+IMDB](https://www.imdb.com/title/tt0117500/):
 
-    <html prefix="og: http://ogp.me/ns#">
+    <html prefix="og: https://ogp.me/ns#">
     <head>
     <title>The Rock (1996)</title>
     <meta property="og:title" content="The Rock" />
     <meta property="og:type" content="video.movie" />
-    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
-    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+    <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
     ...
     </head>
     ...
@@ -69,7 +69,7 @@ recommended:
 
 For example (line-break solely for display purposes):
 
-    <meta property="og:audio" content="http://example.com/bond/theme.mp3" />
+    <meta property="og:audio" content="https://example.com/bond/theme.mp3" />
     <meta property="og:description" 
       content="Sean Connery found fame and fortune as the
                suave, sophisticated British agent, James Bond." />
@@ -78,10 +78,10 @@ For example (line-break solely for display purposes):
     <meta property="og:locale:alternate" content="fr_FR" />
     <meta property="og:locale:alternate" content="es_ES" />
     <meta property="og:site_name" content="IMDb" />
-    <meta property="og:video" content="http://example.com/bond/trailer.swf" />
+    <meta property="og:video" content="https://example.com/bond/trailer.swf" />
 
-The RDF schema (in [Turtle](http://en.wikipedia.org/wiki/Turtle_(syntax))) 
-can be found at [ogp.me/ns](http://ogp.me/ns/ogp.me.ttl).
+The RDF schema (in [Turtle](https://en.wikipedia.org/wiki/Turtle_(syntax))) 
+can be found at [ogp.me/ns](https://ogp.me/ns/ogp.me.ttl).
 
 ---
 ## <a id="structured" href="#structured">Structured Properties</a>
@@ -96,9 +96,10 @@ The `og:image` property has some optional structured properties:
  * `og:image:secure_url` - An alternate url to use if the webpage requires
     HTTPS.
  * `og:image:type` - A [MIME type](
-    http://en.wikipedia.org/wiki/Internet_media_type) for this image.
+    https://en.wikipedia.org/wiki/Internet_media_type) for this image.
  * `og:image:width` - The number of pixels wide.
  * `og:image:height` - The number of pixels high.
+ * `og:image:alt` - A description of what is in the image (not a caption). If the page specifies an og:image it should specify `og:image:alt`.
 
 A full image example:
 
@@ -107,6 +108,7 @@ A full image example:
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="A shiny red apple with a bite taken out" />
 
 The `og:video` tag has the identical tags as `og:image`. Here is an example:
 
@@ -130,8 +132,8 @@ If a tag can have multiple values, just put multiple versions of the same
 `<meta>` tag on your page. The first tag (from top to bottom) is given
 preference during conflicts.
 
-    <meta property="og:image" content="http://example.com/rock.jpg" />
-    <meta property="og:image" content="http://example.com/rock2.jpg" />
+    <meta property="og:image" content="https://example.com/rock.jpg" />
+    <meta property="og:image" content="https://example.com/rock2.jpg" />
 
 Put structured properties after you declare their root tag. Whenever
 another root element is parsed, that structured property
@@ -139,11 +141,11 @@ is considered to be done and another one is started.
 
 For example:
 
-    <meta property="og:image" content="http://example.com/rock.jpg" />
+    <meta property="og:image" content="https://example.com/rock.jpg" />
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
-    <meta property="og:image" content="http://example.com/rock2.jpg" />
-    <meta property="og:image" content="http://example.com/rock3.jpg" />
+    <meta property="og:image" content="https://example.com/rock2.jpg" />
+    <meta property="og:image" content="https://example.com/rock3.jpg" />
     <meta property="og:image:height" content="1000" />
 
 means there are 3 images on this page, the first image is `300x300`, the middle
@@ -159,9 +161,9 @@ specify its type. This is done using the `og:type` property:
 
 When the community agrees on the schema for a type, it is added to the list
 of global types. All other objects in the type system are
-[CURIEs](http://en.wikipedia.org/wiki/CURIE) of the form
+[CURIEs](https://en.wikipedia.org/wiki/CURIE) of the form
 
-    <head prefix="my_namespace: http://example.com/ns#">
+    <head prefix="my_namespace: https://example.com/ns#">
     <meta property="og:type" content="my_namespace:my_type" />
 
 The global types are grouped into verticals. Each vertical has its
@@ -174,7 +176,7 @@ have colons in them.
 
 ### <a id="type_music" href="#type_music">Music</a>
 
-* Namespace URI: [`http://ogp.me/ns/music#`](http://ogp.me/ns/music)
+* Namespace URI: [`https://ogp.me/ns/music#`](https://ogp.me/ns/music)
 
 `og:type` values:
 
@@ -217,7 +219,7 @@ have colons in them.
 
 ### <a id="type_video" href="#type_video">Video</a>
 
-* Namespace URI: [`http://ogp.me/ns/video#`](http://ogp.me/ns/video)
+* Namespace URI: [`https://ogp.me/ns/video#`](https://ogp.me/ns/video)
 
 `og:type` values:
 
@@ -268,7 +270,7 @@ yet are broadly used and agreed upon.
 
 `og:type` values:
 
-<a name="type_article" href="#type_article">`article`</a> - Namespace URI: [`http://ogp.me/ns/article#`](http://ogp.me/ns/article)
+<a name="type_article" href="#type_article">`article`</a> - Namespace URI: [`https://ogp.me/ns/article#`](https://ogp.me/ns/article)
 
 * `article:published_time` - [datetime](#datetime) - 
   When the article was first published.
@@ -282,23 +284,23 @@ yet are broadly used and agreed upon.
 * `article:tag` - [string](#string) [array](#array) -
   Tag words associated with this article.
 
-<a name="type_book" href="#type_book">`book`</a> - Namespace URI: [`http://ogp.me/ns/book#`](http://ogp.me/ns/book)
+<a name="type_book" href="#type_book">`book`</a> - Namespace URI: [`https://ogp.me/ns/book#`](https://ogp.me/ns/book)
 
 * `book:author` - [profile](#type_profile) [array](#array) - Who wrote this book.
 * `book:isbn` - [string](#string) -
-  The [ISBN](http://en.wikipedia.org/wiki/International_Standard_Book_Number)
+  The [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number)
 * `book:release_date` - [datetime](#datetime) - The date the book was released.
 * `book:tag` - [string](#string) [array](#array) -
   Tag words associated with this book.
 
-<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`http://ogp.me/ns/profile#`](http://ogp.me/ns/profile)
+<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`https://ogp.me/ns/profile#`](https://ogp.me/ns/profile)
 
 * `profile:first_name` - [string](#string) - A name normally given to an individual by a parent or self-chosen.
 * `profile:last_name` - [string](#string) - A name inherited from a family or marriage and by which the individual is commonly known.
 * `profile:username` - [string](#string) - A short unique string to identify them.
 * `profile:gender` - [enum](#enum)(male, female) - Their gender.
 
-<a name="type_website" href="#type_website">`website`</a> - Namespace URI: [`http://ogp.me/ns/website#`](http://ogp.me/ns/website)
+<a name="type_website" href="#type_website">`website`</a> - Namespace URI: [`https://ogp.me/ns/website#`](https://ogp.me/ns/website)
 
 No additional properties other than the basic ones.
 Any non-marked up webpage should be treated as `og:type` website.
@@ -327,7 +329,7 @@ The following types are used when defining attributes in Open Graph protocol.
   <td><a name="datetime" href="#datetime">DateTime</td>
   <td>A DateTime represents a temporal value composed of a date
     (year, month, day) and an optional time component (hours, minutes)</td>
-  <td><a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+  <td><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
 </tr>
 
 <tr>
@@ -378,16 +380,15 @@ The following types are used when defining attributes in Open Graph protocol.
 The open source community has developed a number of parsers and publishing
 tools. Let the Facebook group know if you've built something awesome too!
 
-* [Facebook Object Debugger](http://developers.facebook.com/tools/debug/) - Facebook's official parser and debugger.
-* [Google Rich Snippets Testing Tool](http://www.google.com/webmasters/tools/richsnippets) - Open Graph protocol support in specific verticals and Search Engines.
+* [Facebook Object Debugger](https://developers.facebook.com/tools/debug/) - Facebook's official parser and debugger.
+* [Google Rich Snippets Testing Tool](https://www.google.com/webmasters/tools/richsnippets) - Open Graph protocol support in specific verticals and Search Engines.
 * [PHP Validator and Markup Generator](https://github.com/niallkennedy/open-graph-protocol-tools) - OGP 2011 input validator and markup generator in PHP5 objects.
-* [PHP Consumer](http://github.com/scottmac/opengraph) - A small library for accessing of Open Graph Protocol data in PHP.
-* [OpenGraphNode in PHP](http://buzzword.org.uk/2010/opengraph/#php) - A simple parser for PHP.
-* [PyOpenGraph](http://pypi.python.org/pypi/PyOpenGraph) - A library written in Python for parsing Open Graph protocol information from web sites.
-* [OpenGraph Ruby](http://github.com/intridea/opengraph) - Ruby Gem which parses web pages and extracts Open Graph protocol markup.
-* [OpenGraph for Java](http://github.com/callumj/opengraph-java) - Small Java class used to represent the Open Graph protocol.
-* [RDF::RDFa::Parser](http://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm) - Perl RDFa parser which understands the Open Graph protocol.
-* [Alternate WordPress OGP plugin](http://wordpress.org/plugins/wp-facebook-open-graph-protocol/) - A simple lightweight WordPress plugin which adds Open Graph metadata to WordPress powered sites.
+* [PHP Consumer](https://github.com/scottmac/opengraph) - A small library for accessing of Open Graph Protocol data in PHP.
+* [OpenGraphNode in PHP](https://buzzword.org.uk/2010/opengraph/#php) - A simple parser for PHP.
+* [PyOpenGraph](https://pypi.python.org/pypi/PyOpenGraph) - A library written in Python for parsing Open Graph protocol information from web sites.
+* [OpenGraph Ruby](https://github.com/intridea/opengraph) - Ruby Gem which parses web pages and extracts Open Graph protocol markup.
+* [OpenGraph for Java](https://github.com/callumj/opengraph-java) - Small Java class used to represent the Open Graph protocol.
+* [RDF::RDFa::Parser](https://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm) - Perl RDFa parser which understands the Open Graph protocol.
 
 
 ---

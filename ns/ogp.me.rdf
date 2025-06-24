@@ -63,6 +63,12 @@
     <rdfs:isDefinedBy rdf:resource="http://ogp.me/ns#" />
     <rdfs:range rdf:resource="http://ogp.me/ns/class#integer_str" />
   </rdf:Property>
+  <rdf:Property rdf:about="http://ogp.me/ns#image:alt">
+    <rdfs:label xml:lang="en-US">image alternative text</rdfs:label>
+    <rdfs:comment xml:lang="en-US">A description of what is in the image.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://ogp.me/ns#" />
+    <rdfs:range rdf:resource="http://ogp.me/ns/class#string" />
+  </rdf:Property>
   <rdf:Property rdf:about="http://ogp.me/ns#video">
     <rdfs:label xml:lang="en-US">video</rdfs:label>
     <rdfs:comment xml:lang="en-US">A relevant video URL for your object.</rdfs:comment>
