@@ -386,6 +386,7 @@ tools. Let the Facebook group know if you've built something awesome too!
 * [PyOpenGraph](http://pypi.python.org/pypi/PyOpenGraph) - A library written in Python for parsing Open Graph protocol information from web sites.
 * [OpenGraph Ruby](http://github.com/intridea/opengraph) - Ruby Gem which parses web pages and extracts Open Graph protocol markup.
 * [OpenGraph for Java](http://github.com/callumj/opengraph-java) - Small Java class used to represent the Open Graph protocol.
+* [OpenGraph.Net](https://github.com/ghorsey/OpenGraph-Net) - A .Net library to both parse and write OpenGraph metadata.
 * [RDF::RDFa::Parser](http://search.cpan.org/~tobyink/RDF-RDFa-Parser/lib/RDF/RDFa/Parser.pm) - Perl RDFa parser which understands the Open Graph protocol.
 * [Alternate WordPress OGP plugin](http://wordpress.org/plugins/wp-facebook-open-graph-protocol/) - A simple lightweight WordPress plugin which adds Open Graph metadata to WordPress powered sites.
 
