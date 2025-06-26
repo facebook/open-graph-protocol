@@ -103,7 +103,7 @@ The `og:image` property has some optional structured properties:
 
 A full image example:
 
-    <meta property="og:image" content="http://example.com/ogp.jpg" />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
     <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="400" />
@@ -112,7 +112,7 @@ A full image example:
 
 The `og:video` tag has the identical tags as `og:image`. Here is an example:
 
-    <meta property="og:video" content="http://example.com/movie.swf" />
+    <meta property="og:video" content="https://example.com/movie.swf" />
     <meta property="og:video:secure_url" content="https://secure.example.com/movie.swf" />
     <meta property="og:video:type" content="application/x-shockwave-flash" />
     <meta property="og:video:width" content="400" />
@@ -121,7 +121,7 @@ The `og:video` tag has the identical tags as `og:image`. Here is an example:
 The `og:audio` tag only has the first 3 properties available
 (since size doesn't make sense for sound):
 
-    <meta property="og:audio" content="http://example.com/sound.mp3" />
+    <meta property="og:audio" content="https://example.com/sound.mp3" />
     <meta property="og:audio:secure_url" content="https://secure.example.com/sound.mp3" />
     <meta property="og:audio:type" content="audio/mpeg" />
 
@@ -293,7 +293,7 @@ yet are broadly used and agreed upon.
 * `book:tag` - [string](#string) [array](#array) -
   Tag words associated with this book.
 
-<a name="type_payment" href="#type_payment">`payment.link`</a> - Namespace URI: [`https://ogp.me/ns/payment#`](http://ogp.me/ns/payments) 🚧 **Beta only**
+<a name="type_payment" href="#type_payment">`payment.link`</a> - Namespace URI: [`https://ogp.me/ns/payment#`](https://ogp.me/ns/payments) 🚧 **Beta only**
 
 * `payment:description` - [string](#string) - Description about the payment link. 
 * `payment:currency` - [string](#string) - The currency code [`ISO 4217`](https://en.wikipedia.org/wiki/ISO_4217) of the payment.
@@ -303,7 +303,7 @@ yet are broadly used and agreed upon.
 * `payment:id` - [string](#string) - The unique identifier associated with the payment link for a given payment gateway or service provider.
 * `payment:success_url` - [url](#url) - A valid URL that gets redirected when payment is success.  
 
-<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`http://ogp.me/ns/profile#`](http://ogp.me/ns/profile)
+<a name="type_profile" href="#type_profile">`profile`</a> - Namespace URI: [`https://ogp.me/ns/profile#`](https://ogp.me/ns/profile)
 
 * `profile:first_name` - [string](#string) - A name normally given to an individual by a parent or self-chosen.
 * `profile:last_name` - [string](#string) - A name inherited from a family or marriage and by which the individual is commonly known.
@@ -380,7 +380,7 @@ The following types are used when defining attributes in Open Graph protocol.
 <tr>
   <td><a name="url" href="#url">URL</td>
   <td>A sequence of Unicode characters that identify an Internet resource.
-  <td>All valid URLs that utilize the http:// or https:// protocols</td>
+  <td>All valid URLs that utilize the https:// protocol</td>
 </tr>
 
 </table>

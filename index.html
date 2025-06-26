@@ -137,7 +137,7 @@ HTTPS.</li>
 
 <p>A full image example:</p>
 
-<pre><code>&lt;meta property="og:image" content="http://example.com/ogp.jpg" /&gt;
+<pre><code>&lt;meta property="og:image" content="https://example.com/ogp.jpg" /&gt;
 &lt;meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" /&gt;
 &lt;meta property="og:image:type" content="image/jpeg" /&gt;
 &lt;meta property="og:image:width" content="400" /&gt;
@@ -147,7 +147,7 @@ HTTPS.</li>
 
 <p>The <code>og:video</code> tag has the identical tags as <code>og:image</code>. Here is an example:</p>
 
-<pre><code>&lt;meta property="og:video" content="http://example.com/movie.swf" /&gt;
+<pre><code>&lt;meta property="og:video" content="https://example.com/movie.swf" /&gt;
 &lt;meta property="og:video:secure_url" content="https://secure.example.com/movie.swf" /&gt;
 &lt;meta property="og:video:type" content="application/x-shockwave-flash" /&gt;
 &lt;meta property="og:video:width" content="400" /&gt;
@@ -157,7 +157,7 @@ HTTPS.</li>
 <p>The <code>og:audio</code> tag only has the first 3 properties available
 (since size doesn't make sense for sound):</p>
 
-<pre><code>&lt;meta property="og:audio" content="http://example.com/sound.mp3" /&gt;
+<pre><code>&lt;meta property="og:audio" content="https://example.com/sound.mp3" /&gt;
 &lt;meta property="og:audio:secure_url" content="https://secure.example.com/sound.mp3" /&gt;
 &lt;meta property="og:audio:type" content="audio/mpeg" /&gt;
 </code></pre>
@@ -350,7 +350,7 @@ The <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">I
 Tag words associated with this book.</li>
 </ul>
 
-<p><a name="type_payment" href="#type_payment"><code>payment.link</code></a> - Namespace URI: <a href="http://ogp.me/ns/payments"><code>https://ogp.me/ns/payment#</code></a> 🚧 <strong>Beta only</strong></p>
+<p><a name="type_payment" href="#type_payment"><code>payment.link</code></a> - Namespace URI: <a href="https://ogp.me/ns/payments"><code>https://ogp.me/ns/payment#</code></a> 🚧 <strong>Beta only</strong></p>
 
 <ul>
 <li><code>payment:description</code> - <a href="#string">string</a> - Description about the payment link. </li>
@@ -362,7 +362,7 @@ Tag words associated with this book.</li>
 <li><code>payment:success_url</code> - <a href="#url">url</a> - A valid URL that gets redirected when payment is success.  </li>
 </ul>
 
-<p><a name="type_profile" href="#type_profile"><code>profile</code></a> - Namespace URI: <a href="http://ogp.me/ns/profile"><code>http://ogp.me/ns/profile#</code></a></p>
+<p><a name="type_profile" href="#type_profile"><code>profile</code></a> - Namespace URI: <a href="https://ogp.me/ns/profile"><code>https://ogp.me/ns/profile#</code></a></p>
 
 <ul>
 <li><code>profile:first_name</code> - <a href="#string">string</a> - A name normally given to an individual by a parent or self-chosen.</li>
@@ -440,7 +440,7 @@ Any non-marked up webpage should be treated as <code>og:type</code> website.</p>
 <tr>
   <td><a name="url" href="#url">URL</td>
   <td>A sequence of Unicode characters that identify an Internet resource.
-  <td>All valid URLs that utilize the http:// or https:// protocols</td>
+  <td>All valid URLs that utilize the https:// protocol</td>
 </tr>
 
 </table>
