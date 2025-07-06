@@ -308,13 +308,90 @@ yet are broadly used and agreed upon.
 * `profile:first_name` - [string](#string) - A name normally given to an individual by a parent or self-chosen.
 * `profile:last_name` - [string](#string) - A name inherited from a family or marriage and by which the individual is commonly known.
 * `profile:username` - [string](#string) - A short unique string to identify them.
-* `profile:gender` - [enum](#enum)(male, female) - Their gender.
+* `profile:gender` - [enum](#enum)(male, female, other – see the complete  [gender enum](#gender_enum) list) - Their gender.
 
 <a name="type_website" href="#type_website">`website`</a> - Namespace URI: [`https://ogp.me/ns/website#`](https://ogp.me/ns/website)
 
 No additional properties other than the basic ones.
 Any non-marked up webpage should be treated as `og:type` website.
 
+#### <a id="gender_enum" href="#gender_enum">Gender enum</a>
+
+The following are all the gender types previously identified and implemented on Facebook. You can also opt to leave out the field entirely as these properties are optional anyway.
+
+<ul class="enum">
+<li>agender
+<li>androgyne
+<li>androgynes
+<li>androgynous
+<li>asexual
+<li>bigender
+<li>cis
+<li>cis female
+<li>cis male
+<li>cis man
+<li>cis woman
+<li>cisgender
+<li>cisgender female
+<li>cisgender male
+<li>cisgender man
+<li>cisgender woman
+<li>f2m
+<li>female to male
+<li>female to male trans man
+<li>female to male transgender man
+<li>female to male transsexual man
+<li>ftm
+<li>gender fluid
+<li>gender neutral
+<li>gender nonconforming
+<li>gender questioning
+<li>gender variant
+<li>genderqueer
+<li>hermaphrodite
+<li>intersex
+<li>intersex man
+<li>intersex person
+<li>intersex woman
+<li>m2f
+<li>male to female
+<li>male to female trans woman
+<li>male to female transgender woman
+<li>male to female transsexual woman
+<li>man
+<li>mtf
+<li>neither
+<li>neutrois
+<li>non-binary
+<li>other
+<li>pangender
+<li>polygender
+<li>t* man
+<li>t* woman
+<li>trans
+<li>trans female
+<li>trans male
+<li>trans man
+<li>trans person
+<li>trans*female
+<li>trans*male
+<li>trans*man
+<li>trans*person
+<li>trans*woman
+<li>transexual
+<li>transexual female
+<li>transexual male
+<li>transexual man
+<li>transexual person
+<li>transexual woman
+<li>transgender female
+<li>transgender person
+<li>transmasculine
+<li>two* person
+<li>two-spirit 
+<li>two-spirit person
+<li>woman
+</ul>
 
 ---
 ## <a id="data_types" href="#data_types">Types</a>

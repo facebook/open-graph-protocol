@@ -121,3 +121,25 @@ td {
   color: #666;
   text-align: left;
 }
+.enum {
+  -webkit-column-gap: 4rem;
+    -moz-column-gap: 4rem;
+    column-gap: 4rem;
+    -webkit-column-rule: 1px dotted #ddd;
+    -moz-column-rule: 1px dotted #ddd;
+    column-rule: 1px dotted #ddd;
+  }
+@media (min-width: 25rem) {
+  .enum {
+    -webkit-columns: 2 10rem;
+    -moz-columns: 2 10rem;
+    columns: 2 10rem;
+  }
+}
+@media (min-width: 39rem) {
+  .enum {
+    -webkit-columns: 3 10rem;
+    -moz-columns: 3 10rem;
+    columns: 3 10rem;
+  }
+}
