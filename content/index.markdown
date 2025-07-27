@@ -308,7 +308,7 @@ yet are broadly used and agreed upon.
 * `profile:first_name` - [string](#string) - A name normally given to an individual by a parent or self-chosen.
 * `profile:last_name` - [string](#string) - A name inherited from a family or marriage and by which the individual is commonly known.
 * `profile:username` - [string](#string) - A short unique string to identify them.
-* `profile:gender` - [enum](#enum)(male, female) - Their gender.
+* `profile:gender` - [string](#string) - A string describing their gender.
 
 <a name="type_website" href="#type_website">`website`</a> - Namespace URI: [`https://ogp.me/ns/website#`](https://ogp.me/ns/website)
 
